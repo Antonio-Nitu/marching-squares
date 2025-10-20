@@ -8,7 +8,7 @@
 #include "READ.h"
 #include "WRITE.h"
 #include "RESIZE.h"
-#include "INIT_CONTUR.h"
+#include "INIT_CONTOUR.h"
 #include "GRID.h"
 #include "MARCH.h"
 
@@ -31,9 +31,9 @@ static void command_loop(void)
 			if (READ(&image, &size, &max_val) != 0)
 				break;
 		} else if (strcmp(cmd, "WRITE") == 0) {
-			WRITE(image, size, max_val);
-		} else if (strcmp(cmd, "INIT_CONTUR") == 0) {
-			INIT_CONTUR();
+			write_ppm_image(image, size, max_val);
+		} else if (strcmp(cmd, "INIT_CONTOUR") == 0) {
+			INIT_CONTOUR();
 		} else if (strcmp(cmd, "GRID") == 0) {
 			GRID(image, size);
 		} else if (strcmp(cmd, "MARCH") == 0) {
