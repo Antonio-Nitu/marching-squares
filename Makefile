@@ -1,25 +1,33 @@
+# Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -g -Iheaders
-EXEC = marching_squares
-SRCS = main.c $(wildcard modules/*.c)
-OBJS = $(SRCS:.c=.o)
+CFLAGS = -Wall -Wextra -Iheaders
 
-all: build
+# Source files
+SRC = main.c $(wildcard modules/*.c)
+OBJ = $(SRC:.c=.o)
 
-build: $(EXEC)
+# Target executable
+TARGET = marching_squares
 
-$(EXEC): $(OBJS)
-	@echo "Linking..."
-	$(CC) $(OBJS) -o $(EXEC)
-	@echo "Build finished. Executable is '$(EXEC)'."
+# Default rule
+all: $(TARGET)
 
+# Link object files into the final binary
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# Compile .c to .o
 %.o: %.c
-	@echo "Compiling $<..."
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Clean rule
 clean:
-	@echo "Cleaning up..."
-	rm -f $(EXEC) $(OBJS)
-	@echo "Cleanup complete."
+ifeq ($(OS),Windows_NT)
+	del /Q $(subst /,\,$(OBJ)) $(TARGET) 2>nul || exit 0
+else
+	rm -f $(OBJ) $(TARGET)
+endif
 
-.PHONY: all build clean
+
+# Phony targets
+.PHONY: all clean
