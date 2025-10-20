@@ -58,7 +58,7 @@ The program will then wait for your input. You can redirect input from a file or
 - GRID: Calculates and prints the intermediate binary grid to the console.  
 - MARCH: Applies the Marching Squares algorithm to the currently loaded image, replacing it with its contour map.  
 - RESIZE: Resizes the current image to be 4 times larger.  
-- INIT_CONTUR: A utility command that prints all 16 possible 4x4 contour patterns as valid PPM images.  
+- INIT_CONTOUR: A utility command that prints all 16 possible 4x4 contour patterns as valid PPM images.  
 - EXIT: Terminates the program.  
 
 # Example Workflow
