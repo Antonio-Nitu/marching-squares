@@ -1,4 +1,4 @@
-Marching Squares Contour Generator
+# Marching Squares Contour Generator
 
 Author: Nitu Andrei-Antonio
 Version: 1.0
