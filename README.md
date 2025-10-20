@@ -89,7 +89,7 @@ The project is organized into several modules for clarity:
 - GENERAL.c: Utility functions for memory allocation.
 - READ.c / WRITE.c: Handles PPM image input/output.
 - GRID.c: Logic for generating the binary grid from an image.
-- INIT_CONTUR.c: Defines the 16 contour patterns used by the algorithm.
+- INIT_CONTOUR.c: Defines the 16 contour patterns used by the algorithm.
 - MARCH.c: The core implementation of the Marching Squares algorithm.
 - RESIZE.c: Image scaling functionality.
 - headers/: Contains all the corresponding .h header files.
