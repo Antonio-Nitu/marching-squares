@@ -1,7 +1,7 @@
 # Marching Squares Contour Generator
 
-Author: Nitu Andrei-Antonio
-Version: 1.0
+Author: Nitu Andrei-Antonio  
+Version: 1.0  
 
 This program is a command-line tool written in C that generates contour maps from PPM (Portable Pixmap) images using the Marching Squares algorithm. It allows a user to load an image, process it to find contour lines based on a brightness threshold, and save the resulting map.
 
